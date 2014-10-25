@@ -1,9 +1,9 @@
 language: c++
 compiler:
-  - clang
+#  - clang
   - gcc
 script:
-  - cd build && cmake ../src && make && make test && ./TravisTest
+  - cd build && cmake ../src && make && make test && ./TravisTest && md5 TravisTest
   - echo "$TRAVIS_BUILD_ID"
   - echo "$TRAVIS_BUILD_NUMBER"
   - echo "$TRAVIS_COMMIT"
