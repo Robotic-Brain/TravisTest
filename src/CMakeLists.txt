@@ -9,7 +9,7 @@ add_subdirectory(lib)
 # Configure Files
 ###########################
 if($ENV{TRAVIS})
-    set(GIT_SHA1 $ENV{TRAVIS_BUILD_COMMIT})
+    set(GIT_SHA1 $ENV{TRAVIS_COMMIT})
 else()
     set(GIT_SHA1 "no-travis!")
 endif()

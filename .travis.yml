@@ -4,12 +4,12 @@ compiler:
     - gcc
 script: 
     - cd build && cmake ../src && make && make test && ./TravisTest
- #   - echo "$TRAVIS_BUILD_ID"
- #   - echo "$TRAVIS_BUILD_NUMBER"
- #   - echo "$TRAVIS_BUILD_COMMIT"
- #   - echo "$TRAVIS_BUILD_COMMIT_RANGE"
- #   - echo "$TRAVIS_JOB_ID"
- #   - echo "$TRAVIS_JOB_NUMBER"
- #   - echo "$TRAVIS_REPO_SLUG"
- #   - echo "$TRAVIS_TAG"
- #   - echo "$TRAVIS_OS_NAME"
+    - echo "$TRAVIS_BUILD_ID"
+    - echo "$TRAVIS_BUILD_NUMBER"
+    - echo "$TRAVIS_COMMIT"
+    - echo "$TRAVIS_COMMIT_RANGE"
+    - echo "$TRAVIS_JOB_ID"
+    - echo "$TRAVIS_JOB_NUMBER"
+    - echo "$TRAVIS_REPO_SLUG"
+    - echo "$TRAVIS_TAG"
+    - echo "$TRAVIS_OS_NAME"
