@@ -1,5 +1,5 @@
-build: main.cpp
-	$(CXX) main.cpp
+TravisTest: src/main.cpp
+	$(CXX) src/main.cpp -o "TravisTest"
 
-test: build
-	./a.out
+test: TravisTest
+	./TravisTest
