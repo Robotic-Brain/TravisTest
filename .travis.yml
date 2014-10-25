@@ -1,15 +1,23 @@
 language: c++
 compiler:
-#    - clang
-    - gcc
-script: 
-    - cd build && cmake ../src && make && make test && ./TravisTest
-    - echo "$TRAVIS_BUILD_ID"
-    - echo "$TRAVIS_BUILD_NUMBER"
-    - echo "$TRAVIS_COMMIT"
-    - echo "$TRAVIS_COMMIT_RANGE"
-    - echo "$TRAVIS_JOB_ID"
-    - echo "$TRAVIS_JOB_NUMBER"
-    - echo "$TRAVIS_REPO_SLUG"
-    - echo "$TRAVIS_TAG"
-    - echo "$TRAVIS_OS_NAME"
+  - gcc
+script:
+  - cd build && cmake ../src && make && make test && ./TravisTest
+  - echo "$TRAVIS_BUILD_ID"
+  - echo "$TRAVIS_BUILD_NUMBER"
+  - echo "$TRAVIS_COMMIT"
+  - echo "$TRAVIS_COMMIT_RANGE"
+  - echo "$TRAVIS_JOB_ID"
+  - echo "$TRAVIS_JOB_NUMBER"
+  - echo "$TRAVIS_REPO_SLUG"
+  - echo "$TRAVIS_TAG"
+  - echo "$TRAVIS_OS_NAME"
+deploy:
+  provider: releases
+  api-key:
+    secure: CXfwnuKZw9PgxjOmoATJaO7Q46YSXPZVGVQ+8F6Xprs1KD2ScifECbxOjM/Id/1bMR91X85K3SkW2vlBlHMpqpAum7RWG7szgpCuEYUyGHG4ByUcCwUF1br3Ddv4i03LHh+Y1rVYIF/CywQxvonL1kQUN5muAQfBaouZ482EGF8=
+  file: TravisTest
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
