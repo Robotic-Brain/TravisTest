@@ -1,7 +1,5 @@
-os: osx
 language: c++
 compiler:
-  - clang
   - gcc
 script:
   - cd build && cmake ../src && make && make test && ./TravisTest && openssl md5 TravisTest
